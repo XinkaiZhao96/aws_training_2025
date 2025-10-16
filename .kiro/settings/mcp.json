@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "Framelink Figma MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=YOUR_FIGMA_API_KEY_HERE",
+        "--stdio"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "get_figma_data"
+      ]
+    },
+    "strands-agent-server": {
+      "command": "uvx",
+      "args": [
+        "strands-agents-mcp-server"
+      ],
+      "env": {
+        "OPENWEATHER_API_KEY": "YOUR_OPENWEATHER_API_KEY_HERE"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_directory",
+        "git_status",
+        "git_log",
+        "search_docs",
+        "fetch_doc",
+        "search_docs",
+        "search_docs",
+        "search_docs",
+        "fetch_doc",
+        "search_docs",
+        "search_docs",
+        "fetch_doc",
+        "search_docs"
+      ]
+    },
+    "awslabs-aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "list_directory",
+        "git_status",
+        "git_log",
+        "search_documentation",
+        "read_documentation",
+        "read_documentation",
+        "read_documentation"
+      ]
+    }
+  }
+}

@@ -7,9 +7,9 @@ from strands_tools import http_request
 app = BedrockAgentCoreApp()
 
 # API configurations
-OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "38a9c7392c1c9a1caf60671941d3d98b")
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "OPENWEATHER_API_KEY")
 OPENWEATHER_BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
-TICKETMASTER_API_KEY = os.getenv("TICKETMASTER_API_KEY", "nwttAG9nkHpsdXASbnXscNskfZixQydV")
+TICKETMASTER_API_KEY = os.getenv("TICKETMASTER_API_KEY", "TICKETMASTER_API_KEY")
 TICKETMASTER_BASE_URL = "https://app.ticketmaster.com/discovery/v2/events.json"
 SUNRISE_SUNSET_BASE_URL = "https://api.sunrise-sunset.org/json"
 

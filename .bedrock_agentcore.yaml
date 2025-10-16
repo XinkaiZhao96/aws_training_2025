@@ -1,0 +1,41 @@
+default_agent: weather_agent
+agents:
+  weather_agent:
+    name: weather_agent
+    entrypoint: /home/ubuntu/.kiro/settings/weather_agent.py
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: /home/ubuntu/.kiro/settings
+    aws:
+      execution_role: arn:aws:iam::318747609494:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-425e274c35
+      execution_role_auto_create: false
+      account: '318747609494'
+      region: us-east-1
+      ecr_repository: 318747609494.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-weather_agent
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: weather_agent-E87KKC6j1D
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:318747609494:runtime/weather_agent-E87KKC6j1D
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-weather_agent-builder
+      execution_role: arn:aws:iam::318747609494:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-425e274c35
+      source_bucket: bedrock-agentcore-codebuild-sources-318747609494-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: weather_agent_mem-oNbBPQCNzV
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:318747609494:memory/weather_agent_mem-oNbBPQCNzV
+      memory_name: weather_agent_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: true
+      was_created_by_toolkit: true
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null

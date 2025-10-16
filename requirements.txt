@@ -1,0 +1,7 @@
+bedrock-agentcore
+strands-agents
+strands-agents-tools
+bedrock-agentcore-starter-toolkit
+streamlit
+boto3
+requests
